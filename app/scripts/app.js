@@ -8,24 +8,27 @@
  *
  * Main module of the application.
  */
-angular
-  .module('annuaireAngularApp', [
+var app = angular.module('annuaireAngularApp', [
     'ngCookies',
     'ngResource',
     'ngRoute',
-    'ngSanitize'
+    'ngSanitize',
+    'main',
+    'creation'
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        controllerAs: 'main'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/creation', {
+        templateUrl: 'views/creation.html',
+        controller: 'CreationCtrl',
+      })
+      .when('/edition/:contactId', {
+        templateUrl: 'views/contacts.html',
+        controller: 'ContactsCtrl',
       })
       .otherwise({
         redirectTo: '/'

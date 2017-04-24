@@ -1,0 +1,10 @@
+<div class="jumbotron" ng-controller="EditionCtrl">
+<h2>Ajouter un nouveau contact</h2>
+
+  <form novalidate class="form">
+    <label>Nom: <input type="text" ng-model="contact.name" required /></label><br />
+    <label>Téléphone: <input ng-model="contact.phoneCall" required /></label><br />
+    <input type="button" ng-click="annuler(contact)" value="Annuler" />
+    <input type="submit" ng-click="saveContact()" value="Enregistrer" />
+  </form>
+  </div>

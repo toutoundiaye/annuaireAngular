@@ -1,0 +1,19 @@
+<div class="jumbotron" ng-controller="CreationCtrl">
+ <h1>Voici la liste de vos contacts</h1>
+  <accordeon>
+  <contact contact-name="contact.name" ng-repeat="contact in contacts">
+  {{contact.phoneCall}} 
+  <a ng-href="#/edition/{{$index}}">Editer</a>
+  <input type="button" ng-click="delete()" value="Supprimer" />
+  </contact>  
+</accordeon>
+</div>
+<h2>Ajouter un nouveau contact</h2>
+
+  <form novalidate class="form">
+    <label>Nom: <input type="text" ng-model="contact.name" required /></label><br />
+    <label>Téléphone: <input ng-model="contact.phoneCall" required /></label><br />
+    <input type="button" ng-click="cancel(contact)" value="Annuler" />
+    <input type="submit" ng-click="save(contact)" value="Enregistrer" />
+  </form>
+  

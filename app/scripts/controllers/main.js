@@ -7,11 +7,6 @@
  * # MainCtrl
  * Controller of the annuaireAngularApp
  */
-angular.module('annuaireAngularApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+var main = angular.module('main',[]);
+  main.controller('MainCtrl', function () {
   });
